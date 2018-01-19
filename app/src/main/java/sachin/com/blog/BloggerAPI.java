@@ -10,7 +10,7 @@ import retrofit2.http.GET;
  */
 
 public class BloggerAPI {
-    private static final String key = "AIzaSyDj73SjdEda5JUOorG6LByvQ802iOMAE4E";
+    private static final String key = "";
     private static final String url = "https://www.googleapis.com/blogger/v3/blogs/3752995850348112551/posts/";
 
     public static PostService postService = null;
