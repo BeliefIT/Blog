@@ -10,6 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        getData();
     }
     private void setUpToolbar()
     {
@@ -50,5 +55,21 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
+    }
+    private void getData()
+    {
+        Call<PostList> postList=BloggerAPI.getService().getPostList();
+        postList.enqueue(new Callback<PostList>() {
+            @Override
+            public void onResponse(Call<PostList> call, Response<PostList> response) {
+                PostList list=response.body();
+                Toast.makeText(MainActivity.this," success", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<PostList> call, Throwable t) {
+                Toast.makeText(MainActivity.this," Error Occured", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

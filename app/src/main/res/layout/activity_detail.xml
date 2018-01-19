@@ -14,7 +14,6 @@
         android:layout_alignParentLeft="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:layout_alignParentStart="true">
-
     </android.support.v7.widget.Toolbar>
 
     <WebView
