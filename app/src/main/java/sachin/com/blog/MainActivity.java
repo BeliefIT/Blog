@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<PostList> call, Throwable t) {
                 Toast.makeText(MainActivity.this,"Error occur",Toast.LENGTH_SHORT).show();
 
-
+/* .... */
             }
         });
     }
