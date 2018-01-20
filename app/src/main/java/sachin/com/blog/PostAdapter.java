@@ -1,6 +1,7 @@
 package sachin.com.blog;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     @Override
     public void onBindViewHolder(PostViewHolder holder, int position) {
-        Item item = items.get(position);
+        final Item item = items.get(position);
         holder.postTitle.setText(item.getTitle());
         //holder.postDescription.setText(item.getContent());
 
@@ -55,6 +56,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         //Log.d("Text",document.text());
 
         Glide.with(context).load(elements.get(0).attr("src")).into(holder.postImage);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(context,DetailActivity.class);
+                intent.putExtra("url",item.getUrl());
+                context.startActivity(intent);
+            }
+        });
 
     }
 
