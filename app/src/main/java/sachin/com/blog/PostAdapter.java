@@ -8,6 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
 import java.util.List;
 
 /**
@@ -27,17 +33,28 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     @Override
     public PostViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater=LayoutInflater.from(context);
-        View view=layoutInflater.inflate(R.layout.post_item,parent,false);
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View view = layoutInflater.inflate(R.layout.post_item, parent, false);
 
         return new PostViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(PostViewHolder holder, int position) {
-        Item item=items.get(position);
+        Item item = items.get(position);
         holder.postTitle.setText(item.getTitle());
-        holder.postDescription.setText(item.getContent());
+        //holder.postDescription.setText(item.getContent());
+
+
+        Document document = Jsoup.parse(item.getContent());
+        holder.postDescription.setText(document.text());
+
+        Elements elements = document.select("img");
+
+        //Log.d("Code","image-"+elements.get(0).attr("src"));
+        //Log.d("Text",document.text());
+
+        Glide.with(context).load(elements.get(0).attr("src")).into(holder.postImage);
 
     }
 
@@ -54,8 +71,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         public PostViewHolder(View itemView) {
             super(itemView);
             postImage = itemView.findViewById(R.id.postImage);
-            postTitle =itemView.findViewById(R.id.postTitle);
-            postDescription= itemView.findViewById(R.id.postDescription);
+            postTitle = itemView.findViewById(R.id.postTitle);
+            postDescription = itemView.findViewById(R.id.postDescription);
         }
     }
 }
