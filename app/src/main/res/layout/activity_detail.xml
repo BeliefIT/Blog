@@ -6,10 +6,7 @@
     tools:context="sachin.com.blog.DetailActivity">
 
 
-    <WebView
-        android:id="@+id/detailView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -20,6 +17,13 @@
         android:background="@color/colorPrimaryDark"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
     </android.support.v7.widget.Toolbar>
+
+    <WebView
+        android:id="@+id/detailView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
