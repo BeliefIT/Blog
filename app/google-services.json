@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "753701579468",
+    "firebase_url": "https://gupshup-addcd.firebaseio.com",
+    "project_id": "gupshup-addcd",
+    "storage_bucket": "gupshup-addcd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753701579468:android:10f437fa237cc1e2",
+        "android_client_info": {
+          "package_name": "sachin.com.blog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753701579468-779rkfnn56sjrjjvdch61ok4te2pu0ec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sachin.com.blog",
+            "certificate_hash": "dbcce416c41ff2409ff960c1670485a8c700645f"
+          }
+        },
+        {
+          "client_id": "753701579468-d8nrhs7uib6pmck509p3ilgr6i6j9cf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9SPdjOw1qsKyfCjxJUJSBNxZqaW-pT8o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753701579468-d8nrhs7uib6pmck509p3ilgr6i6j9cf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

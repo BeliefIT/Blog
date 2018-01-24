@@ -1,11 +1,13 @@
 package sachin.com.blog;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -20,11 +22,16 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
+    RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        recyclerView = findViewById(R.id.postList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         setUpToolbar();
         navigationView=findViewById(R.id.navigation_menu);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -63,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 PostList list=response.body();
+                recyclerView.setAdapter(new PostAdapter(MainActivity.this, list.getItems()));
                 Toast.makeText(MainActivity.this," success", Toast.LENGTH_LONG).show();
             }
 
