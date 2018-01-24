@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "745493064506",
+    "firebase_url": "https://blog-210d1.firebaseio.com",
+    "project_id": "blog-210d1",
+    "storage_bucket": "blog-210d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745493064506:android:10f437fa237cc1e2",
+        "android_client_info": {
+          "package_name": "sachin.com.blog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745493064506-9i3iq3esjumah5o1r0dsi9ecaqc2kfg6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sachin.com.blog",
+            "certificate_hash": "7407539c2ef9c66295b621f7dc90d30971c7abb9"
+          }
+        },
+        {
+          "client_id": "745493064506-stkns9c6d5ju236ihgs5899v4ta06aj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhFeUHrg_kRxt9qO_HtWma33mMAL9agXM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745493064506-stkns9c6d5ju236ihgs5899v4ta06aj1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
